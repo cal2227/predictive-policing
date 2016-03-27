@@ -11,7 +11,6 @@ def plot_frequencies(df):
 
     def plot_frequency(df, column):
         plot = df.groupby(column).size().plot(kind='bar')
-        plot.set_xlabel("")
         fig = plot.get_figure()
         fig.suptitle(column)
         fig.savefig("frequency_plots/{}.png".format(column))
@@ -29,9 +28,9 @@ def plot_frequencies_digest(df):
         cell = ax[row, col]
         
         df.groupby(column).size().plot(
+          subplots=True,
           ax=cell,
           kind='bar')
-        cell.set_title(column)
         cell.set_xlabel("")
         
 
