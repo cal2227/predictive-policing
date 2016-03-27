@@ -1,4 +1,3 @@
-
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -154,6 +153,10 @@ data['pos_illegal'].astype('category')
 # 1706741    0
 # Name: pos_illegal, dtype: category
 # Categories (2, int64): [0, 1]
+
+data['city'].value_counts().plot(kind='bar')
+# <matplotlib.axes._subplots.AxesSubplot object at 0x11aef2d10>
+plt.show()
 
 data.groupby('city').size().plot(kind='bar')
 # <matplotlib.axes._subplots.AxesSubplot object at 0x10666b290>
